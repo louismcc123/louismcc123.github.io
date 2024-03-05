@@ -1,0 +1,140 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Add your custom styles here */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6em; /* Increase the padding for a larger header */
+        }
+
+            #header .logo {
+                margin-right: auto; /* Push the logo to the left */
+            }
+
+        #profile-image {
+            width: 100%; /* Make the container 30% of the width */
+            max-width: 500px; /* Set a maximum width for the container */
+            height: auto; /* Automatically adjust the height */
+            overflow: hidden;
+        }
+
+            #profile-image img {
+                width: 100%;
+                height: auto;
+                object-fit: contain; /* Use 'contain' to maintain aspect ratio and fit within the container */
+            }
+
+        #main {
+            display: flex;
+            justify-content: space-between;
+            padding: 2em;
+        }
+
+            #main section {
+                width: 70%; /* Adjust the width of the content area */
+            }
+
+        #header h2 {
+            font-size: 3em; /* Adjust the font size as needed */
+        }
+
+        @media only screen and (max-width: 768px) {
+            #header h2 {
+                font-size: 2em; /* Adjust font size for screens up to 768px width */
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #header h2 {
+                font-size: 1.5em; /* Adjust font size for screens up to 480px width */
+            }
+    </style>
+</head>
+
+<body class="is-preload">
+    <div id="wrapper" class="fade-in">
+
+        <!-- Header -->
+        <header id="header">
+            <h2>About Me</h2>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li class="active"><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Posts -->
+            <section class="posts">
+                <article>
+                    <p>I'm an enthusiastic and dedicated MSc Games Development student with a passion for making games!</p>
+                    <ul class="actions special">
+                        <li><a href="contact.html" class="button">Contact me</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <div id="profile-image">
+                        <img src="images\ProfilePic.svg" alt="Profile Image" />
+                    </div>
+                </article>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">+44 7903 694766</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">mccouigdevelopment@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
