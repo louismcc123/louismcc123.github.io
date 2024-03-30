@@ -3,119 +3,175 @@
 	Louis McCouig
 -->
 <html>
-	<head>
-		<title>Louis McCouig</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>Louis McCouig</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		/* Add the CSS code provided earlier */
+		#nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+		.links {
+			position: relative;
+		}
 
-				<!-- Intro -->
-				<div id="intro" style="background: url('images/IMG_8346.JPG') center bottom/cover no-repeat;">
-					<h1>Louis McCouig</h1>
-					<p>I'm an enthusiastic and dedicated MSc Games Development student with a passion for making games!</p>
-					<ul class="actions">
-						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-					</ul>
-				</div>
+			.links ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+				.links ul li {
+					margin-right: 20px;
+					position: relative;
+				}
+
+		.sub-menu {
+			display: none;
+			position: absolute;
+			top: calc(100% + 5px);
+			left: 0;
+			background-color: #fff;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		.links ul li.active:hover .sub-menu {
+			display: block;
+		}
+
+		.icons {
+			display: flex;
+			align-items: center;
+		}
+
+			.icons li {
+				margin-left: 20px;
+			}
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Intro -->
+		<div id="intro" style="background: url('images/IMG_8346.JPG') center bottom/cover no-repeat;">
+			<h1>Louis McCouig</h1>
+			<p>I'm an enthusiastic and dedicated MSc Games Development student with a passion for making games!</p>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+			</ul>
+		</div>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<div class="links">
+				<ul>
+					<li class="active">
+						<a href="index.html">Projects</a>
+						<ul class="sub-menu">
 							<li><a href="impulse.html">Impulse</a></li>
 							<li><a href="by-decree.html">By Decree</a></li>
 							<li><a href="predator-prey-simulator.html">Predator-Prey Simulator</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
 						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-						<article class="post featured">
-							<header class="major">
-								<h2><a href="impulse.html">Impulse</h2>
-								<p>Impulse is an insightful interactive VR experience designed around an escape room concept. The principle of the game is intended to both educate the player about the effects of different substances on the body, and act as a metaphor for life, where bad or unhealthy choices can often prevent people from reaching their goals or progressing in life.</p>
-							</header>
-							<a href="impulse.html" class="image main"><img src="images\Impulse Background.jpg" alt="" /></a>
-							<ul class="actions special">
-								<li><a href="impulse.html" class="button large">Check it out</a></li>
-							</ul>
-						</article>
-
-						<!-- Posts -->
-						<section class="posts">
-							<article>
-								<header>
-									<h2><a href="by-decree.html">By Decree</h2>
-								</header>
-								<a href="by-decree.html" class="image fit"><img src="images/By decree menu.png" alt="" /></a>
-								<p>An exhilarating space-themed platformer that thrusts players into the heart of a sci-fi battle for Earth's survival.</p>
-								<ul class="actions special">
-									<li><a href="by-decree.html" class="button">Check it out</a></li>
-								</ul>
-							</article>
-							<article>
-								<header>
-									<h2><a href="predator-prey-simulator.html">Predator-Prey Simulator</h2>
-								</header>
-								<a href="predator-prey-simulator.html" class="image fit"><img src="images/animals.png" alt="" /></a>
-								<p>A model that shows how the variation of an animal’s attributes determine its behaviors and ultimately its survival.</p>
-								<ul class="actions special">
-									<li><a href="predator-prey-simulator.html" class="button">Check it out</a></li>
-								</ul>
-							</article>
-						</section>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">+44 7903 694766</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">mccouigdevelopment@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
+					</li>
+				</ul>
 			</div>
+			<div class="links">
+				<ul>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Main -->
+		<div id="main">
 
-	</body>
+			<!-- Featured Post -->
+			<article class="post featured">
+				<header class="major">
+					<h2><a href="impulse.html">Impulse</a></h2>
+					<p>Impulse is an insightful interactive VR experience designed around an escape room concept. The principle of the game is intended to both educate the player about the effects of different substances on the body, and act as a metaphor for life, where bad or unhealthy choices can often prevent people from reaching their goals or progressing in life.</p>
+				</header>
+				<a href="impulse.html" class="image main"><img src="images\Impulse Background.jpg" alt="" /></a>
+				<ul class="actions special">
+					<li><a href="impulse.html" class="button large">Check it out</a></li>
+				</ul>
+			</article>
+
+			<!-- Posts -->
+			<section class="posts">
+				<article>
+					<header>
+						<h2><a href="by-decree.html">By Decree</a></h2>
+					</header>
+					<a href="by-decree.html" class="image fit"><img src="images/By decree menu.png" alt="" /></a>
+					<p>An exhilarating space-themed platformer that thrusts players into the heart of a sci-fi battle for Earth's survival.</p>
+					<ul class="actions special">
+						<li><a href="by-decree.html" class="button">Check it out</a></li>
+					</ul>
+				</article>
+				<article>
+					<header>
+						<h2><a href="predator-prey-simulator.html">Predator-Prey Simulator</a></h2>
+					</header>
+					<a href="predator-prey-simulator.html" class="image fit"><img src="images/animals.png" alt="" /></a>
+					<p>A model that shows how the variation of an animal’s attributes determine its behaviors and ultimately its survival.</p>
+					<ul class="actions special">
+						<li><a href="predator-prey-simulator.html" class="button">Check it out</a></li>
+					</ul>
+				</article>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section class="split contact">
+				<section>
+					<h3>Phone</h3>
+					<p><a href="#">+44 7903 694766</a></p>
+				</section>
+				<section>
+					<h3>Email</h3>
+					<p><a href="#">mccouigdevelopment@gmail.com</a></p>
+				</section>
+				<section>
+					<h3>Social</h3>
+					<ul class="icons alt">
+						<li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</section>
+			</section>
+		</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
 </html>
