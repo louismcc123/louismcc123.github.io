@@ -1,11 +1,210 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE HTML>
+<!--
+    Louis McCouig
+-->
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Louis McCouig</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+    <style>
+        #intro {
+            position: relative;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Send it to the back */
+        }
+
+        .foreground-image {
+            /* Adjust the styles for the foreground image as needed */
+            width: 100%;
+            height: auto;
+            z-index: 1; /* Keep it at the top */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em; /* Adjust the gap between images as needed */
+        }
+
+            .image-grid a {
+                display: block;
+                width: 100%;
+                height: 100%; /* Ensure that the grid items take the full height */
+            }
+
+            .image-grid img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Adjust the object-fit property as needed */
+            }
+
+        .posts {
+            display: grid;
+            grid-template-columns: 1fr; /* Set to 1fr for a single column layout */
+            gap: 2em; /* Adjust the gap between articles as needed */
+        }
+
+            /* Optional: If you want to make individual articles take full width */
+            .posts article {
+                width: 100%;
+            }
+
+        .concept.and.objectives p,
+        .Design.Elements p {
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left; /* Align the text to the left */
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        ul ul {
+            list-style-type: circle; /* Use 'circle' for nested lists */
+            padding-left: 20px;
+        }
+
+        ul strong {
+            text-align: left; /* Align strong (bold) text to the left */
+        }
+    </style>
 </head>
-<body>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+
+        <div id="intro">
+            <img class="background-image" src="images/bg.jpg" alt="Background Image">
+            <img class="foreground-image" src="images/Impulse Background.jpg" alt="Foreground Image">
+            <p>An exhilarating space-themed platformer that thrusts players into the heart of a sci-fi battle for Earth's survival.</p>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Posts -->
+            <article class="concept and objectives">
+                <header class="major">
+                    <h2><a href="#">Concept and Objectives</a></h2>
+                    <p>Fight off waves of exter terrestrial foes as they inflitrate your spaceship, Earth's final barrier from the invasion wiping humanity.' .</p>
+                </header>
+                <ul class="actions special">
+                    <li><a href="contact.html" class="button large">Get in touch</a></li>
+                </ul>
+            </article>
+            <article class="Design Elements">
+                <header class="major">
+                    <h2><a href="#">Design Elements</a></h2>
+                    <p>
+                        The game features consumable items influencing health, with dynamic progression requiring increasing health for each door. Unhealthy choices are strategically placed to tempt players, reinforcing the metaphorical aspect. Doors separate rooms, each demanding higher health, and the final door requires both full health and a key, adding complexity. This design ensures dynamic gameplay and strategic decision-making.
+                    </p>
+                    <div class="image main">
+                        <div class="image-grid">
+                            <a href="#" class="image"><img src="images/ImpulseKitchen.png" alt="" /></a>
+                            <a href="#" class="image"><img src="images/ImpulseBedroom.png" alt="" /></a>
+                            <a href="#" class="image"><img src="images/ImpulseFoyer.png" alt="" /></a>
+                            <a href="#" class="image"><img src="images/ImpulseLounge.png" alt="" /></a>
+                        </div>
+                    </div>
+                </header>
+                <ul class="actions special">
+                    <li><a href="contact.html" class="button large">Get in touch</a></li>
+                </ul>
+            </article>
+            <article class="Programming and Implementation">
+                <header class="major">
+                    <h2><a href="#">Programming and Implementation</a></h2>
+                    <p>
+                        Unity's XR Interaction Toolkit was used for VR setup and interactions, creating an XR rig with essential components. Game management scripts like GameManager and RoomManager facilitated scene transitions and determined player progress. Player scripts, interactable items, doors, UI elements, and audio scripts were meticulously implemented, resulting in a polished and engaging gameplay experience. The project successfully merges thoughtful design with precise technical implementation.
+                    </p>
+
+                </header>
+                <ul class="actions special">
+                    <li><a href="contact.html" class="button large">Get in touch</a></li>
+                </ul>
+            </article>
+            <article class="Social Impact and Future Considerations">
+                <header class="major">
+                    <h2><a href="#">Social Impact and Future Considerations</a></h2>
+                    <p>
+                        The team hopes the game educates users on healthy behaviors, providing insights into resources for better life choices. Addressing substance abuse openly, the game aims to be a valuable tool for discussions with youths. While the project met its brief goals, future enhancements could include enhanced realism in object interactions as well as exploring more expansive level designs with more engaging puzzles and challenges.
+                    </p>
+                </header>
+                <ul class="actions special">
+                    <li><a href="contact.html" class="button large">Get in touch</a></li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">+44 7903 694766</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">mccouigdevelopment@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
