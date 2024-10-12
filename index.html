@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* Add the CSS code provided earlier */
         #nav {
             display: flex;
             justify-content: space-between;
@@ -21,16 +20,17 @@
             position: relative;
         }
 
-            .links ul {
-                margin: 0;
-                padding: 0;
-                list-style-type: none;
-            }
+        .links ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+        }
 
-                .links ul li {
-                    margin-right: 20px;
-                    position: relative;
-                }
+        .links ul li {
+            margin-right: 20px;
+            position: relative;
+        }
 
         .sub-menu {
             display: none;
@@ -40,8 +40,10 @@
             background-color: #fff;
             padding: 10px;
             border-radius: 5px;
+            z-index: 1000;
         }
 
+        /* Show the submenu on hover */
         .links ul li.active:hover .sub-menu {
             display: block;
         }
@@ -51,9 +53,9 @@
             align-items: center;
         }
 
-            .icons li {
-                margin-left: 20px;
-            }
+        .icons li {
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -73,104 +75,91 @@
         <!-- Nav -->
         <nav id="nav">
             <ul class="links">
-                <li class="active"><a href="index.html">Projects</a></li>
+                <li class="active">
+                    <a href="index.html">Projects</a>
+                    <ul class="sub-menu">
+                        <li><a href="neurodivrse.html">NeurodiVRse</a></li>
+                        <li><a href="impulse.html">Impulse</a></li>
+                        <li><a href="the-hunt.html">The Hunt</a></li>
+                        <li><a href="predator-prey-simulator.html">Predator-Prey Simulator</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
-            <!-- Main -->
-            <div id="main">
+        <!-- Main -->
+        <div id="main">
 
-                <!-- Featured Post -->
-                <article class="post featured">
-                    <header class="major">
-                        <h2><a href="neurodivrse.html">NeurodiVRse</a></h2>
-                        <p>
-                            Welcome to NeurodiVRse, the interactive virtual reality game for social skills development.
-                        </p>
+            <!-- Featured Post -->
+            <article class="post featured">
+                <header class="major">
+                    <h2><a href="neurodivrse.html">NeurodiVRse</a></h2>
+                    <p>A virtual reality game designed to help neurodivergent individuals develop social skills through immersive group interactions. This project compares the effectiveness of scripted versus AI-driven dialogue to create realistic, impactful conversations.</p>
+                </header>
+                <a href="neurodivrse.html" class="image main"><img src="images/neurodiVRseCafe.png" alt="" /></a>
+                <ul class="actions special">
+                    <li><a href="neurodivrse.html" class="button large">Check it out</a></li>
+                </ul>
+            </article>
+
+            <!-- Posts -->
+            <section class="posts">
+                <article>
+                    <header>
+                        <h2><a href="impulse.html">Impulse</a></h2>
                     </header>
-                    <a href="neurodivrse.html" class="image main"><img src="images\neurodiVRseCafe.png" alt="" /></a>
+                    <a href="impulse.html" class="image fit"><img src="images/Impulse Background.jpg" alt="" /></a>
+                    <p>Impulse is an insightful interactive VR experience designed around an escape room concept. It educates players about the effects of different substances on the body.</p>
                     <ul class="actions special">
-                        <li><a href="neurodivrse.html" class="button large">Check it out</a></li>
+                        <li><a href="impulse.html" class="button">Check it out</a></li>
                     </ul>
                 </article>
+                <article>
+                    <header>
+                        <h2><a href="the-hunt.html">The Hunt</a></h2>
+                    </header>
+                    <a href="the-hunt.html" class="image fit"><img src="images/Main Menu.jpg" alt="" /></a>
+                    <p>A thrilling 4-player asymmetrical multiplayer experience where players take on the roles of either a stealthy assassin or a cooperative team of police officers.</p>
+                    <ul class="actions special">
+                        <li><a href="the-hunt.html" class="button">Check it out</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <header>
+                        <h2><a href="predator-prey-simulator.html">Predator-Prey Simulator</a></h2>
+                    </header>
+                    <a href="predator-prey-simulator.html" class="image fit"><img src="images/animals.png" alt="" /></a>
+                    <p>A model that shows how the variation of an animal’s attributes determines its behaviors and ultimately its survival.</p>
+                    <ul class="actions special">
+                        <li><a href="predator-prey-simulator.html" class="button">Check it out</a></li>
+                    </ul>
+                </article>
+            </section>
+        </div>
 
-                <!-- Posts -->
-                <section class="posts">
-                    <article>
-                        <header>
-                            <h2><a href="impulse.html">Impulse</a></h2>
-                        </header>
-                        <a href="impulse.html" class="image fit"><img src="images/Impulse Background.jpg" alt="" /></a>
-                        <p>Impulse is an insightful interactive VR experience designed around an escape room concept.
-                        The principle of the game is intended to both educate the player about the effects of different
-                        substances on the body, and act as a metaphor for life, where bad or unhealthy choices can often
-                        prevent people from reaching their goals or progressing in life.</p>
-                        <ul class="actions special">
-                            <li><a href="impulse.html" class="button">Check it out</a></li>
-                        </ul>
-                    </article>
-                    <article>
-                        <header>
-                            <h2><a href="the-hunt.html">The Hunt</a></h2>
-                        </header>
-                        <a href="the-hunt.html" class="image fit"><img src="images/Main Menu.jpg" alt="" /></a>
-                        <p>A thrilling 4-player asymmetrical multiplayer experience where players take on the roles of either a stealthy assassin or a cooperative team of police officers. It's a heart-pounding game of cops and robbers set against the gritty backdrop of Nova City.</p>
-                        <ul class="actions special">
-                            <li><a href="the-hunt.html" class="button">Check it out</a></li>
-                        </ul>
-                    </article>
-<!--                    <article>
-                        <header>
-                            <h2><a href="by-decree.html">By Decree</a></h2>
-                        </header>
-                        <a href="by-decree.html" class="image fit"><img src="images/By decree menu.png" alt="" /></a>
-                        <p>An exhilarating space-themed platformer that thrusts players into the heart of a sci-fi battle for Earth's survival.</p>
-                        <ul class="actions special">
-                            <li><a href="by-decree.html" class="button">Check it out</a></li>
-                        </ul>
-                    </article> -->
-                    <article>
-                        <header>
-                            <h2><a href="predator-prey-simulator.html">Predator-Prey Simulator</a></h2>
-                        </header>
-                        <a href="predator-prey-simulator.html" class="image fit"><img src="images/animals.png" alt="" /></a>
-                        <p>A model that shows how the variation of an animal’s attributes determine its behaviors and ultimately its survival.</p>
-                        <ul class="actions special">
-                            <li><a href="predator-prey-simulator.html" class="button">Check it out</a></li>
-                        </ul>
-                    </article>
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">+44 7903 694766</a></p>
                 </section>
-            </div>
-
-            <!-- Footer -->
-            <footer id="footer">
-                <section class="split contact">
-                    <section>
-                        <h3>Phone</h3>
-                        <p><a href="#">+44 7903 694766</a></p>
-                    </section>
-                    <section>
-                        <h3>Email</h3>
-                        <p><a href="#">mccouigdevelopment@gmail.com</a></p>
-                    </section>
-                    <section>
-                        <h3>Social</h3>
-                        <ul class="icons alt">
-                            <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                            <li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                        </ul>
-                    </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">mccouigdevelopment@gmail.com</a></p>
                 </section>
-            </footer>
-
-            <!-- Copyright -->
-            <div id="copyright">
-                <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-            </div>
-
-</div>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+    </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
