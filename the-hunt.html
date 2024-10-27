@@ -10,25 +10,24 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
     <style>
-        /* Navigation Styles */
-        #nav {
-            position: fixed; /* Fix the navbar at the top */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
-            background-color: white; /* Background color of the navbar */
-            z-index: 1000; /* Ensure it's on top of other content */
-            padding: 1em; /* Padding around the nav */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for depth */
+        body {
+            margin: 0; /* Reset body margin */
         }
 
-        /* Body Margin Adjustment */
-        #wrapper {
-            margin-top: 60px; /* Adjust based on the height of your navbar */
+        #nav {
+            position: fixed; /* Fix the nav at the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            z-index: 1000; /* Ensure nav is on top */
+            padding: 1em; /* Add padding for aesthetics */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
         }
 
         #intro {
             position: relative;
+            margin-top: 60px; /* Space for the fixed nav */
         }
 
         .background-image {
@@ -158,6 +157,7 @@
 
     <!-- Wrapper -->
     <div id="wrapper" class="fade-in">
+
         <div id="intro">
             <img class="background-image" src="images/bg.jpg" alt="Background Image">
             <img class="foreground-image" src="images/Main Menu.jpg" alt="Foreground Image">
@@ -227,27 +227,18 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <ul class="copyright">
-            <li>&copy; Louis McCouig. All rights reserved.</li>
-        </ul>
-    </footer>
-
     <script>
         function openModal() {
-            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal").style.display = "block"; // Show modal
         }
 
         function closeModal() {
-            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal").style.display = "none"; // Hide modal
         }
 
-        // Close modal if the user clicks anywhere outside of it
         window.onclick = function (event) {
-            const modal = document.getElementById("modal");
-            if (event.target == modal) {
-                closeModal();
+            if (event.target == document.getElementById("modal")) {
+                closeModal(); // Close modal if clicking outside
             }
         }
     </script>
