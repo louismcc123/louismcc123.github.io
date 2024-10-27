@@ -10,24 +10,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
     <style>
-        body {
-            margin: 0; /* Reset body margin */
-        }
-
-        #nav {
-            position: fixed; /* Fix the nav at the top */
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-            z-index: 1000; /* Ensure nav is on top */
-            padding: 1em; /* Add padding for aesthetics */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-        }
-
         #intro {
             position: relative;
-            margin-top: 60px; /* Space for the fixed nav */
         }
 
         .background-image {
@@ -142,19 +126,6 @@
 </head>
 
 <body class="is-preload">
-    <!-- Nav -->
-    <nav id="nav">
-        <ul class="links">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <ul class="icons">
-            <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            <li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        </ul>
-    </nav>
-
     <!-- Wrapper -->
     <div id="wrapper" class="fade-in">
 
@@ -166,6 +137,19 @@
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
             </ul>
         </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
 
         <!-- Main -->
         <div id="main">
@@ -224,23 +208,57 @@
                     <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
                 </ul>
             </article>
+
+            <article class="future-considerations">
+                <header class="major">
+                    <h2><a href="#">Future Enhancements</a></h2>
+                    <p>
+                        Upcoming updates for The Hunt include implementing full UI canvases, adding loadouts for character customisation, expanding cop character options, and enhancing stealth features for the assassin role. These additions aim to enrich gameplay, providing players with even more strategic choices and a polished gaming experience.
+                    </p>
+                </header>
+                <ul class="actions special">
+                    <li><a href="contact.html" class="button large">Get in touch</a></li>
+                </ul>
+            </article>
         </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">+44 7903 694766</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">mccouigdevelopment@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
     </div>
 
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
     <script>
+        // Modal functions
         function openModal() {
-            document.getElementById("modal").style.display = "block"; // Show modal
+            document.getElementById("modal").style.display = "block";
         }
 
         function closeModal() {
-            document.getElementById("modal").style.display = "none"; // Hide modal
+            document.getElementById("modal").style.display = "none";
         }
-
-        window.onclick = function (event) {
-            if (event.target == document.getElementById("modal")) {
-                closeModal(); // Close modal if clicking outside
-            }
-        }
-    </script>
-</body>
-</html>
