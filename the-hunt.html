@@ -25,99 +25,54 @@
         }
 
         .foreground-image {
-            /* Adjust the styles for the foreground image as needed */
             width: 100%;
             height: auto;
             z-index: 1; /* Keep it at the top */
-            cursor: pointer;
-            position: relative; /* Ensure it can be positioned correctly */
         }
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1em;
+        .thumbnail {
+            cursor: pointer; /* Change cursor on hover */
+            width: 100%; /* Adjust as necessary */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Add space below the thumbnail */
         }
 
-            .image-grid a {
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-
-            .image-grid img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-        .posts {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2em;
-        }
-
-        .concept.and.objectives p,
-        .Design.Elements p {
-            text-align: left;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        ul ul {
-            list-style-type: circle;
-            padding-left: 20px;
-        }
-
-        ul strong {
-            text-align: left;
-        }
-
-        /* Modal Styles */
+        /* Modal styles */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 2; /* Sit on top */
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
         }
 
         .modal-content {
             position: relative;
-            margin: 10% auto;
+            margin: 15% auto; /* 15% from the top and centered */
             padding: 0;
-            width: 80%;
-            max-width: 800px;
-            background-color: #fff;
-            border-radius: 8px;
+            width: 80%; /* Could be more or less, depending on screen size */
         }
 
             .modal-content iframe {
-                width: 100%;
-                height: 400px;
-                border-radius: 8px 8px 0 0;
+                width: 100%; /* Make the video responsive */
+                height: 450px; /* Set a fixed height */
             }
 
         .close {
             position: absolute;
             top: 10px;
-            right: 20px;
-            color: #aaa;
-            font-size: 24px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
             font-weight: bold;
-            cursor: pointer;
+            cursor: pointer; /* Change cursor on hover */
         }
+
+        /* Add additional styles as needed */
     </style>
 </head>
 <body class="is-preload">
@@ -127,7 +82,7 @@
 
         <div id="intro">
             <img class="background-image" src="images/bg.jpg" alt="Background Image">
-            <img class="foreground-image" src="images/Main Menu.jpg" alt="Foreground Image" onclick="showModal()">
+            <img class="foreground-image" src="images/Main Menu.jpg" alt="Foreground Image">
             <p>A thrilling 4-player asymmetrical multiplayer experience where players take on the roles of either a stealthy assassin or a cooperative team of police officers. It's a heart-pounding game of cops and robbers set against the gritty backdrop of Nova City.</p>
             <ul class="actions">
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -136,14 +91,6 @@
                 <li><a href="contact.html" class="button large">Get in touch</a></li>
                 <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
             </ul>
-        </div>
-
-        <!-- Modal Structure for YouTube Video -->
-        <div id="videoModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <iframe id="youtubeVideo" width="100%" height="400" src="https://www.youtube.com/embed/3lmfxUjD4vI" frameborder="0" allowfullscreen></iframe>
-            </div>
         </div>
 
         <!-- Nav -->
@@ -161,11 +108,24 @@
 
         <!-- Main -->
         <div id="main">
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <iframe src="https://www.youtube.com/embed/3lmfxUjD4vI" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Thumbnail Image for Modal -->
+            <img class="thumbnail" src="images/theHuntThumbnail.png" alt="Thumbnail Image" onclick="openModal()">
+
             <!-- Posts -->
             <article class="concept-and-objectives">
                 <header class="major">
                     <h2><a href="#">Concept and Objectives</a></h2>
-                    <p>The Hunt is a multiplayer game where players take on the roles of either a skilled assassin or a team of elite cops, each with unique abilities and objectives. Emphasising stealth, strategy, and teamwork, the game creates an adrenaline-pumping experience as players work to chase or evade targets in a high-stakes environment.</p>
+                    <p>
+                        The Hunt is a multiplayer game where players take on the roles of either a skilled assassin or a team of elite cops, each with unique abilities and objectives. Emphasising stealth, strategy, and teamwork, the game creates an adrenaline-pumping experience as players work to chase or evade targets in a high-stakes environment.
+                    </p>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
@@ -175,7 +135,9 @@
             <article class="design-elements">
                 <header class="major">
                     <h2><a href="#">Design Elements</a></h2>
-                    <p>The Hunt features dynamic gameplay elements including leaderboards, interactable items, and an immersive audio system. Using LootLocker, players' scores for kills, damage, and deaths are tracked, fostering a competitive environment. Realistic audio cues and a strategic health system add depth to gameplay, enhancing the experience whether players are evading capture or pursuing their target.</p>
+                    <p>
+                        The Hunt features dynamic gameplay elements including leaderboards, interactable items, and an immersive audio system. Using LootLocker, players' scores for kills, damage, and deaths are tracked, fostering a competitive environment. Realistic audio cues and a strategic health system add depth to gameplay, enhancing the experience whether players are evading capture or pursuing their target.
+                    </p>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
@@ -185,7 +147,9 @@
             <article class="programming-and-implementation">
                 <header class="major">
                     <h2><a href="#">Programming and Implementation</a></h2>
-                    <p>The Hunt was developed using Photon Unity Networking (PUN) for seamless multiplayer support, with additional backend services through LootLocker. Key scripts handle game mechanics, such as the PlayerStats and HealthBar systems, custom leaderboard integration, and synchronised audio feedback. RPC methods ensure consistent gameplay across clients, making the multiplayer experience smooth and engaging.</p>
+                    <p>
+                        The Hunt was developed using Photon Unity Networking (PUN) for seamless multiplayer support, with additional backend services through LootLocker. Key scripts handle game mechanics, such as the PlayerStats and HealthBar systems, custom leaderboard integration, and synchronised audio feedback. RPC methods ensure consistent gameplay across clients, making the multiplayer experience smooth and engaging.
+                    </p>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
@@ -196,7 +160,9 @@
             <article class="future-considerations">
                 <header class="major">
                     <h2><a href="#">Future Enhancements</a></h2>
-                    <p>Upcoming updates for The Hunt include implementing full UI canvases, adding loadouts for character customisation, expanding cop character options, and enhancing stealth features for the assassin role. These additions aim to enrich gameplay, providing players with even more strategic choices and a polished gaming experience.</p>
+                    <p>
+                        Upcoming updates for The Hunt include implementing full UI canvases, adding loadouts for character customisation, expanding cop character options, and enhancing stealth features for the assassin role. These additions aim to enrich gameplay, providing players with even more strategic choices and a polished gaming experience.
+                    </p>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
@@ -235,23 +201,22 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Modal JavaScript -->
     <script>
-        function showModal() {
-            document.getElementById('videoModal').style.display = 'block';
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
         }
 
         function closeModal() {
-            document.getElementById('videoModal').style.display = 'none';
+            document.getElementById("myModal").style.display = "none";
         }
 
-        // Close modal when clicking outside of the content
+        // Close modal when clicking outside of it
         window.onclick = function (event) {
-            var modal = document.getElementById('videoModal');
-            if (event.target === modal) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
                 closeModal();
             }
-        };
+        }
     </script>
 </body>
 </html>
