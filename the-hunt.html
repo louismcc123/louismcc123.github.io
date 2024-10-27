@@ -262,3 +262,13 @@
         function closeModal() {
             document.getElementById("modal").style.display = "none";
         }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("modal")) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
