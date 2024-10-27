@@ -25,10 +25,11 @@
         }
 
         .foreground-image {
-            /* Adjust the styles for the foreground image as needed */
             width: 100%;
+            max-width: 1000px;
             height: auto;
             z-index: 1; /* Keep it at the top */
+            margin-bottom: 20px;
         }
 
         .image-grid {
@@ -49,6 +50,33 @@
                 object-fit: cover; /* Adjust the object-fit property as needed */
             }
 
+        .thumbnail-container {
+            position: relative;
+            cursor: pointer; /* Change cursor to indicate interactivity */
+            margin: 2em auto; /* Center thumbnail container */
+            text-align: center; /* Center the content */
+        }
+
+        .thumbnail {
+            width: 100%; /* Adjust as needed */
+            max-width: 800px;
+            height: auto; /* Adjust as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .demo-statement {
+            text-align: center; /* Center the text below the thumbnail */
+            font-size: 1.2em; /* Adjust the font size as needed */
+            margin-top: 0.5em; /* Add some space above the statement */
+            color: #333; /* Change the color as needed */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em; /* Adjust the gap between images as needed */
+        }
+
         .posts {
             display: grid;
             grid-template-columns: 1fr; /* Set to 1fr for a single column layout */
@@ -59,11 +87,6 @@
             .posts article {
                 width: 100%;
             }
-
-        .concept.and.objectives p,
-        .Design.Elements p {
-            text-align: left;
-        }
 
         ul {
             list-style-type: disc;
@@ -83,17 +106,51 @@
         ul strong {
             text-align: left; /* Align strong (bold) text to the left */
         }
+
+        /* Modal Styles */
+        #modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: auto; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+        }
+
+        #modal-content {
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center; /* Center text */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+            }
     </style>
 </head>
-<body class="is-preload">
 
+<body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper" class="fade-in">
 
         <div id="intro">
             <img class="background-image" src="images/bg.jpg" alt="Background Image">
             <img class="foreground-image" src="images/animals.png" alt="Foreground Image">
-            <p>An insightful, interactive VR experience designed around an escape room concept.</p>
+            <p>The Predator-Prey Simulator is an interactive model that demonstrates natural selection and the balance of ecosystems through engaging gameplay.</p>
             <ul class="actions">
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
             </ul>
@@ -114,65 +171,76 @@
 
         <!-- Main -->
         <div id="main">
-
-            <!-- Featured Post -->
-            <article class="post featured">
-                <header class="major">
-                    <!-- <h2><a href="#">Impulse</a></h2> -->
-                    <p>Impulse is an insightful interactive VR experience designed around an escape room concept. The principle of the game is intended to both educate the player about the effects of different substances on the body, and act as a metaphor for life, where bad or unhealthy choices can often prevent people from reaching their goals or progressing in life.</p>
-                </header>
-                <!-- Video -->
+            <!-- Thumbnail Image for Modal -->
+            <div class="thumbnail-container" onclick="openModal()">
+                <img class="thumbnail" src="images/the Hunt Thumbnail.jpg" alt="Thumbnail Image">
+                <p class="demo-statement" onclick="openModal()">Watch a demo here!</p>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
+                    <li><a href="https://github.com/louismcc123/Predator-Prey-Simulator" class="button large">View source code</a></li>
                 </ul>
-            </article>
+            </div>
+
+            <!-- Modal -->
+            <div id="modal">
+                <div id="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=XXAAQY4R2kw" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
 
             <!-- Posts -->
-            <article class="concept and objectives">
+            <article class="concept-and-objectives">
                 <header class="major">
                     <h2><a href="#">Concept and Objectives</a></h2>
-                    <p>The escape-room game challenges players to navigate four rooms, making decisions about health-affecting substances to exit through the final door. Beyond entertainment, it serves as a life metaphor, emphasizing consequences of unhealthy choices and promoting strategic decision-making for long-term rewards. The goal is to educate players about substance effects while encouraging thoughtful and strategic decision-making.</p>
+                    <p>
+                        Inspired by the Lotka-Volterra equations, the simulator explores how variations in animal attributes affect behaviour and survival in a dynamic environment. The aim is to create a realistic ecosystem where players can observe the interactions between predators and prey.
+                    </p>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
                 </ul>
             </article>
-            <article class="Design Elements">
+
+            <article class="design-elements">
                 <header class="major">
                     <h2><a href="#">Design Elements</a></h2>
-                    <p>
-                        The game features consumable items influencing health, with dynamic progression requiring increasing health for each door. Unhealthy choices are strategically placed to tempt players, reinforcing the metaphorical aspect. Doors separate rooms, each demanding higher health, and the final door requires both full health and a key, adding complexity. This design ensures dynamic gameplay and strategic decision-making.
-                    </p>
-                    <div class="image main">
-                        <div class="image-grid">
-                            <a href="#" class="image"><img src="images/ImpulseKitchen.png" alt="" /></a>
-                            <a href="#" class="image"><img src="images/ImpulseBedroom.png" alt="" /></a>
-                            <a href="#" class="image"><img src="images/ImpulseFoyer.png" alt="" /></a>
-                            <a href="#" class="image"><img src="images/ImpulseLounge.png" alt="" /></a>
-                        </div>
-                    </div>
                 </header>
+                <div class="image main">
+                    <div class="image-grid">
+                        <a href="#" class="image"><img src="images/preyBehaviours.png" alt="Prey Behaviours" /></a>
+                        <a href="#" class="image"><img src="images/predatorBehaviours.png" alt="Predator Behaviours" /></a>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>Environment:</strong> Manages entity spawning and ensures population balance for plants and animals.</li>
+                    <li><strong>Animals:</strong> Utilises finite state machines for simplified predator and prey behaviours based on survival needs.</li>
+                    <li><strong>Camera Controller:</strong> Provides a strategy-style camera that follows selected animals, enhancing immersion.</li>
+                    <li><strong>User Interface:</strong> Currently in development, intended to display population statistics and facilitate player interactions.</li>
+                </ul>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
                 </ul>
             </article>
-            <article class="Programming and Implementation">
+
+            <article class="programming-and-implementation">
                 <header class="major">
                     <h2><a href="#">Programming and Implementation</a></h2>
                     <p>
-                        Unity's XR Interaction Toolkit was used for VR setup and interactions, creating an XR rig with essential components. Game management scripts like GameManager and RoomManager facilitated scene transitions and determined player progress. Player scripts, interactable items, doors, UI elements, and audio scripts were meticulously implemented, resulting in a polished and engaging gameplay experience. The project successfully merges thoughtful design with precise technical implementation.
+                        The simulator employs Unity’s AI for movement and pathfinding, allowing animals to navigate efficiently while avoiding obstacles. A basic genetic algorithm governs reproduction and mutation, although enhancements are needed to improve long-term viability in the ecosystem.
                     </p>
-
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
+                    <li><a href="https://github.com/louismcc123/Predator-Prey-Simulator" class="button large">View source code</a></li>
                 </ul>
             </article>
-            <article class="Social Impact and Future Considerations">
+
+            <article class="future-considerations">
                 <header class="major">
-                    <h2><a href="#">Social Impact and Future Considerations</a></h2>
+                    <h2><a href="#">Future Enhancements</a></h2>
                     <p>
-                        The team hopes the game educates users on healthy behaviors, providing insights into resources for better life choices. Addressing substance abuse openly, the game aims to be a valuable tool for discussions with youths. While the project met its brief goals, future enhancements could include enhanced realism in object interactions as well as exploring more expansive level designs with more engaging puzzles and challenges.
+                        Plans for future development include refining the genetic algorithm, adding attributes like health and age for animals, and improving the user interface for a more interactive experience. Additionally, I aim to create more complex terrains and diverse species to enrich gameplay and simulation depth.
                     </p>
                 </header>
                 <ul class="actions special">
@@ -212,5 +280,22 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("modal")) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
