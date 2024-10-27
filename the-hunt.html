@@ -30,23 +30,40 @@
             z-index: 1; /* Keep it at the top */
         }
 
+        .thumbnail-container {
+            position: relative;
+            cursor: pointer; /* Change cursor to indicate interactivity */
+            margin: 2em auto; /* Center thumbnail container */
+            text-align: center; /* Center the content */
+        }
+
+        .thumbnail {
+            width: 100%; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for absolute positioning */
+            width: 50px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .demo-statement {
+            text-align: center; /* Center the text below the thumbnail */
+            font-size: 1.2em; /* Adjust the font size as needed */
+            margin-top: 0.5em; /* Add some space above the statement */
+            color: #333; /* Change the color as needed */
+        }
+
         .image-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1em; /* Adjust the gap between images as needed */
         }
-
-            .image-grid a {
-                display: block;
-                width: 100%;
-                height: 100%; /* Ensure that the grid items take the full height */
-            }
-
-            .image-grid img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover; /* Adjust the object-fit property as needed */
-            }
 
         .posts {
             display: grid;
@@ -58,11 +75,6 @@
             .posts article {
                 width: 100%;
             }
-
-        .concept.and.objectives p,
-        .design.elements p {
-            text-align: left;
-        }
 
         ul {
             list-style-type: disc;
@@ -83,56 +95,36 @@
             text-align: left; /* Align strong (bold) text to the left */
         }
 
-        /* New styles for the thumbnail and modal */
-        .thumbnail-container {
-            position: relative;
-            cursor: pointer; /* Change cursor to indicate interactivity */
-            margin: 2em auto; /* Center thumbnail container */
-            text-align: center; /* Center the content */
-        }
-
-        .demo-statement {
-            margin: 0.5em 0; /* Adjusted margin for better spacing */
-        }
-
-        .actions {
-            margin: 0; /* Remove any default margin */
-            padding: 0; /* Remove any default padding */
-        }
-
         /* Modal Styles */
         #modal {
             display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
+            position: fixed;
             z-index: 1000; /* Sit on top */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
         }
 
         #modal-content {
-            position: relative;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 0;
+            margin: 15% auto;
+            padding: 20px;
             width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center; /* Center text */
         }
 
         .close {
-            color: white;
-            position: absolute;
-            right: 25px;
-            top: 0;
-            font-size: 35px;
+            color: #aaa;
+            float: right;
+            font-size: 28px;
             font-weight: bold;
         }
 
             .close:hover,
             .close:focus {
-                color: #bbb;
+                color: white;
                 text-decoration: none;
                 cursor: pointer;
             }
@@ -145,9 +137,7 @@
 
         <div id="intro">
             <img class="background-image" src="images/bg.jpg" alt="Background Image">
-            <a href="https://www.youtube.com/watch?v=3lmfxUjD4vI" target="_blank">
-                <img class="foreground-image" src="images/Main Menu.jpg" alt="Foreground Image">
-            </a>
+            <img class="foreground-image" src="images/Main Menu.jpg" alt="Foreground Image">
             <p>A thrilling 4-player asymmetrical multiplayer experience where players take on the roles of either a stealthy assassin or a cooperative team of police officers. It's a heart-pounding game of cops and robbers set against the gritty backdrop of Nova City.</p>
             <ul class="actions">
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -175,8 +165,7 @@
         <div id="main">
             <!-- Thumbnail Image for Modal -->
             <div class="thumbnail-container" onclick="openModal()">
-                <img class="thumbnail" src="images/theHuntThumbnail.png" alt="Thumbnail Image">
-                <img class="play-icon" src="images/YouTube_play_button_icon_(2013–2017).png" alt="Play Icon">
+                <img class="thumbnail" src="images/the Hunt Thumbnail.jpg" alt="Thumbnail Image">
                 <p class="demo-statement" onclick="openModal()">Watch a demo here!</p>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
@@ -226,41 +215,70 @@
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
+                    <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
+                </ul>
+            </article>
+
+            <article class="future-considerations">
+                <header class="major">
+                    <h2><a href="#">Future Enhancements</a></h2>
+                    <p>
+                        Upcoming updates for The Hunt include implementing full UI canvases, adding loadouts for character customisation, expanding cop character options, and enhancing stealth features for the assassin role. These additions aim to enrich gameplay, providing players with even more strategic choices and a polished gaming experience.
+                    </p>
+                </header>
+                <ul class="actions special">
+                    <li><a href="contact.html" class="button large">Get in touch</a></li>
                 </ul>
             </article>
         </div>
 
         <!-- Footer -->
         <footer id="footer">
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                <li><a href="https://github.com/louismcc123" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Louis McCouig</li>
-            </ul>
+            <section class="split contact">
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="#">+44 7903 694766</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">mccouigdevelopment@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/louismccouig/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/louismcc123" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
         </footer>
     </div>
 
     <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
     <script>
-        // Open Modal
+        // Modal functions
         function openModal() {
             document.getElementById("modal").style.display = "block";
         }
 
-        // Close Modal
         function closeModal() {
             document.getElementById("modal").style.display = "none";
         }
 
-        // Close modal when clicking outside of the modal content
+        // Close the modal when clicking outside of it
         window.onclick = function (event) {
-            const modal = document.getElementById("modal");
-            if (event.target === modal) {
-                modal.style.display = "none";
+            if (event.target == document.getElementById("modal")) {
+                closeModal();
             }
-        };
+        }
     </script>
 </body>
 </html>
