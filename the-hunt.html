@@ -30,18 +30,76 @@
             z-index: 1; /* Keep it at the top */
         }
 
-        .thumbnail {
-            cursor: pointer; /* Change cursor on hover */
-            width: 100%; /* Adjust as necessary */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Add space below the thumbnail */
+        .thumbnail-container {
+            position: relative;
+            cursor: pointer; /* Change cursor to indicate interactivity */
+            margin: 2em auto; /* Center thumbnail container */
+            text-align: center; /* Center the content */
         }
 
-        /* Modal styles */
-        .modal {
+        .thumbnail {
+            width: 100%; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for absolute positioning */
+            width: 50px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .demo-statement {
+            text-align: center; /* Center the text below the thumbnail */
+            font-size: 1.2em; /* Adjust the font size as needed */
+            margin-top: 0.5em; /* Add some space above the statement */
+            color: #333; /* Change the color as needed */
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em; /* Adjust the gap between images as needed */
+        }
+
+        .posts {
+            display: grid;
+            grid-template-columns: 1fr; /* Set to 1fr for a single column layout */
+            gap: 2em; /* Adjust the gap between articles as needed */
+        }
+
+            /* Optional: If you want to make individual articles take full width */
+            .posts article {
+                width: 100%;
+            }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left; /* Align the text to the left */
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        ul ul {
+            list-style-type: circle; /* Use 'circle' for nested lists */
+            padding-left: 20px;
+        }
+
+        ul strong {
+            text-align: left; /* Align strong (bold) text to the left */
+        }
+
+        /* Modal Styles */
+        #modal {
             display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 2; /* Sit on top */
+            position: fixed;
+            z-index: 1000; /* Sit on top */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
@@ -50,29 +108,26 @@
             background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
         }
 
-        .modal-content {
-            position: relative;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 0;
+        #modal-content {
+            margin: 15% auto;
+            padding: 20px;
             width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center; /* Center text */
         }
-
-            .modal-content iframe {
-                width: 100%; /* Make the video responsive */
-                height: 450px; /* Set a fixed height */
-            }
 
         .close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: white;
-            font-size: 35px;
+            color: #aaa;
+            float: right;
+            font-size: 28px;
             font-weight: bold;
-            cursor: pointer; /* Change cursor on hover */
         }
 
-        /* Add additional styles as needed */
+            .close:hover,
+            .close:focus {
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+            }
     </style>
 </head>
 <body class="is-preload">
@@ -86,10 +141,6 @@
             <p>A thrilling 4-player asymmetrical multiplayer experience where players take on the roles of either a stealthy assassin or a cooperative team of police officers. It's a heart-pounding game of cops and robbers set against the gritty backdrop of Nova City.</p>
             <ul class="actions">
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-            </ul>
-            <ul class="actions special">
-                <li><a href="contact.html" class="button large">Get in touch</a></li>
-                <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
             </ul>
         </div>
 
@@ -108,16 +159,24 @@
 
         <!-- Main -->
         <div id="main">
+            <!-- Thumbnail Image for Modal -->
+            <div class="thumbnail-container" onclick="openModal()">
+                <img class="thumbnail" src="images/thumbnail.jpg" alt="Thumbnail Image">
+                <img class="play-icon" src="images/YouTube_play_button_icon_(2013–2017).png" alt="Play Icon">
+            </div>
+            <p class="demo-statement" onclick="openModal()">Watch a demo here!</p>
+
             <!-- Modal -->
-            <div id="myModal" class="modal">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div class="modal-content">
-                    <iframe src="https://www.youtube.com/embed/3lmfxUjD4vI" frameborder="0" allowfullscreen></iframe>
+            <div id="modal">
+                <div id="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/3lmfxUjD4vI" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-
-            <!-- Thumbnail Image for Modal -->
-            <img class="thumbnail" src="images/theHuntThumbnail.png" alt="Thumbnail Image" onclick="openModal()">
+            <ul class="actions special">
+                <li><a href="contact.html" class="button large">Get in touch</a></li>
+                <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
+            </ul>
 
             <!-- Posts -->
             <article class="concept-and-objectives">
@@ -202,18 +261,18 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+        // Modal functions
         function openModal() {
-            document.getElementById("myModal").style.display = "block";
+            document.getElementById("modal").style.display = "block";
         }
 
         function closeModal() {
-            document.getElementById("myModal").style.display = "none";
+            document.getElementById("modal").style.display = "none";
         }
 
-        // Close modal when clicking outside of it
+        // Close the modal when clicking outside of it
         window.onclick = function (event) {
-            const modal = document.getElementById("myModal");
-            if (event.target == modal) {
+            if (event.target == document.getElementById("modal")) {
                 closeModal();
             }
         }
