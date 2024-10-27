@@ -92,10 +92,16 @@
 
         <div id="intro">
             <img class="background-image" src="images/bg.jpg" alt="Background Image">
-            <img class="foreground-image" src="images/Main Menu.png" alt="Foreground Image">
+            <a href="https://www.youtube.com/watch?v=3lmfxUjD4vI" target="_blank">
+                <img class="foreground-image" src="images/Main Menu.jpg" alt="Foreground Image">
+            </a>
             <p>A thrilling 4-player asymmetrical multiplayer experience where players take on the roles of either a stealthy assassin or a cooperative team of police officers. It's a heart-pounding game of cops and robbers set against the gritty backdrop of Nova City.</p>
             <ul class="actions">
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+            <ul class="actions special">
+                <li><a href="contact.html" class="button large">Get in touch</a></li>
+                <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
             </ul>
         </div>
 
@@ -114,53 +120,49 @@
 
         <!-- Main -->
         <div id="main">
-
             <!-- Posts -->
-            <article class="concept and objectives">
+            <article class="concept-and-objectives">
                 <header class="major">
                     <h2><a href="#">Concept and Objectives</a></h2>
-                    <p>Players take on the roles of either a skilled assassin or a team of elite cops, each with their unique set of abilities and objectives. The game's primary focus is on stealth, strategy, and teamwork, providing players with an adrenaline-pumping experience as they chase or evade their targets.</p>
+                    <p>
+                        The Hunt is a multiplayer game where players take on the roles of either a skilled assassin or a team of elite cops, each with unique abilities and objectives. Emphasising stealth, strategy, and teamwork, the game creates an adrenaline-pumping experience as players work to chase or evade targets in a high-stakes environment.
+                    </p>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
                 </ul>
             </article>
-            <article class="Design Elements">
+
+            <article class="design-elements">
                 <header class="major">
                     <h2><a href="#">Design Elements</a></h2>
                     <p>
-                        The game features consumable items influencing health, with dynamic progression requiring increasing health for each door. Unhealthy choices are strategically placed to tempt players, reinforcing the metaphorical aspect. Doors separate rooms, each demanding higher health, and the final door requires both full health and a key, adding complexity. This design ensures dynamic gameplay and strategic decision-making.
+                        The Hunt features dynamic gameplay elements including leaderboards, interactable items, and an immersive audio system. Using LootLocker, players' scores for kills, damage, and deaths are tracked, fostering a competitive environment. Realistic audio cues and a strategic health system add depth to gameplay, enhancing the experience whether players are evading capture or pursuing their target.
                     </p>
-                    <div class="image main">
-                        <div class="image-grid">
-                            <a href="#" class="image"><img src="images/ImpulseKitchen.png" alt="" /></a>
-                            <a href="#" class="image"><img src="images/ImpulseBedroom.png" alt="" /></a>
-                            <a href="#" class="image"><img src="images/ImpulseFoyer.png" alt="" /></a>
-                            <a href="#" class="image"><img src="images/ImpulseLounge.png" alt="" /></a>
-                        </div>
-                    </div>
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
                 </ul>
             </article>
-            <article class="Programming and Implementation">
+
+            <article class="programming-and-implementation">
                 <header class="major">
                     <h2><a href="#">Programming and Implementation</a></h2>
                     <p>
-                        Unity's XR Interaction Toolkit was used for VR setup and interactions, creating an XR rig with essential components. Game management scripts like GameManager and RoomManager facilitated scene transitions and determined player progress. Player scripts, interactable items, doors, UI elements, and audio scripts were meticulously implemented, resulting in a polished and engaging gameplay experience. The project successfully merges thoughtful design with precise technical implementation.
+                        The Hunt was developed using Photon Unity Networking (PUN) for seamless multiplayer support, with additional backend services through LootLocker. Key scripts handle game mechanics, such as the PlayerStats and HealthBar systems, custom leaderboard integration, and synchronised audio feedback. RPC methods ensure consistent gameplay across clients, making the multiplayer experience smooth and engaging.
                     </p>
-
                 </header>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
+                    <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
                 </ul>
             </article>
-            <article class="Social Impact and Future Considerations">
+
+            <article class="future-considerations">
                 <header class="major">
-                    <h2><a href="#">Social Impact and Future Considerations</a></h2>
+                    <h2><a href="#">Future Enhancements</a></h2>
                     <p>
-                        The team hopes the game educates users on healthy behaviors, providing insights into resources for better life choices. Addressing substance abuse openly, the game aims to be a valuable tool for discussions with youths. While the project met its brief goals, future enhancements could include enhanced realism in object interactions as well as exploring more expansive level designs with more engaging puzzles and challenges.
+                        Upcoming updates for The Hunt include implementing full UI canvases, adding loadouts for character customisation, expanding cop character options, and enhancing stealth features for the assassin role. These additions aim to enrich gameplay, providing players with even more strategic choices and a polished gaming experience.
                     </p>
                 </header>
                 <ul class="actions special">
@@ -189,12 +191,6 @@
                 </section>
             </section>
         </footer>
-
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-        </div>
-
     </div>
 
     <!-- Scripts -->
