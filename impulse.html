@@ -37,6 +37,7 @@
             cursor: pointer; /* Change cursor to indicate interactivity */
             margin: 2em auto; /* Center thumbnail container */
             text-align: center; /* Center the content */
+            z-index: 1; /* Ensure thumbnail container is above background */
         }
 
         .thumbnail {
@@ -176,6 +177,12 @@
         /* Show dropdown on hover */
         .dropdown:hover .dropdown-content {
             display: block; /* Display the dropdown */
+        }
+
+        /* Adjust #main section to be above the background */
+        #main {
+            position: relative;
+            z-index: 1; /* Ensure it's above the background */
         }
 
 
