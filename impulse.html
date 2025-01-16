@@ -347,14 +347,29 @@
             }
         };
 
+        document.querySelector('.dropdown').addEventListener('mouseenter', function () {
+            this.querySelector('.dropdown-content').classList.add('show');
+        });
+
+        document.querySelector('.dropdown').addEventListener('mouseleave', function () {
+            this.querySelector('.dropdown-content').classList.remove('show');
+        });
+
         // Dropdown click toggle for mobile
-        document.addEventListener("DOMContentLoaded", function () {
-            const dropdownToggle = document.querySelector(".dropdown-toggle");
-            dropdownToggle.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent link navigation
-                const dropdown = this.nextElementSibling;
-                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-            });
+        document.querySelector('.dropdown').addEventListener('click', function (e) {
+            const dropdownMenu = this.querySelector('.dropdown-content');
+            dropdownMenu.classList.toggle('show');
+            e.stopPropagation(); // Prevent click from bubbling up
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function (event) {
+            if (!event.target.closest('.dropdown')) {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+            }
         });
     </script>
 </body>
