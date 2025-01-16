@@ -122,6 +122,64 @@
                 text-decoration: none;
                 cursor: pointer;
             }
+        /* Custom CSS for dropdown menu */
+        #nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            #nav ul li {
+                display: inline-block;
+                position: relative;
+            }
+
+                #nav ul li a {
+                    text-decoration: none;
+                    color: inherit;
+                    padding: 10px;
+                    display: inline-block;
+                }
+
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+        }
+
+        /* Dropdown button */
+        .dropbtn {
+            cursor: pointer;
+        }
+
+        /* Dropdown content */
+        .dropdown-content {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+            .dropdown-content li {
+                list-style: none;
+            }
+
+            .dropdown-content a {
+                color: #333;
+                text-decoration: none;
+                display: block;
+                padding: 10px 15px;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
@@ -142,6 +200,15 @@
         <nav id="nav">
             <ul class="links">
                 <li class="active"><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Projects</a>
+                    <ul class="dropdown-content">
+                        <li><a href="neurodivrse.html">NeurodiVRse</a></li>
+                        <li><a href="impulse.html">Impulse</a></li>
+                        <li><a href="thehunt.html">The Hunt</a></li>
+                        <li><a href="predator-prey-simulator.html">Predator-Prey Simulator</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -159,7 +226,7 @@
                 <p class="demo-statement" onclick="openModal()">Watch a demo here!</p>
                 <ul class="actions special">
                     <li><a href="contact.html" class="button large">Get in touch</a></li>
-                    <li><a href="https://github.com/louismcc123/The-Hunt" class="button large">View source code</a></li>
+                    <li><a href="https://github.com/louismcc123/Impulse" class="button large">View source code</a></li>
                 </ul>
             </div>
 
